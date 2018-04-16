@@ -76,9 +76,28 @@ sitesToVisitRef.on('child_removed', function(data) {
     job.cancel();
 });
 
+var express = require('express');
+var app = express();
+var http = require('http');
+var port = process.env.PORT || '3000';
+var server = http.createServer(app);
+server.listen(port);
+server.on('listening', onListening);
 
 
+var router = express.Router();
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+});
+app.use('/', router);
 
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  console.log('Listening on ' + bind);
+}
     // var schedule = require('node-schedule');
     // var j = schedule.scheduleJob("hi", '01 48 14 * * 1,2,3,4,5,6,7', function(){
     //     console.log("exec")
