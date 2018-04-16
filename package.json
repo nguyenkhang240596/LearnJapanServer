@@ -1,0 +1,17 @@
+{
+  "name": "fcm-push",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kalis",
+  "license": "ISC",
+  "dependencies": {
+    "fcm-node": "^1.2.1",
+    "firebase": "^4.12.1",
+    "node-schedule": "^1.3.0"
+  }
+}
