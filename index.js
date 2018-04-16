@@ -87,7 +87,8 @@ server.on('listening', onListening);
 
 var router = express.Router();
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  var date = new Date();
+  res.send(date);
 });
 app.use('/', router);
 
