@@ -89,7 +89,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   var date = new Date();
   var timeZone = date.getTimezoneOffset();
-  date.setUTCHours(20);
+  // date.setUTCHours(20);
   res.send({date, timeZone});
 });
 app.use('/', router);
